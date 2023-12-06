@@ -2,7 +2,8 @@
     "name": "collab project",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "collab project": "github:jae-stevens/collab-project#a8ea909cec2e9b565844a1f41b35481198eea095"
     },
     "files": [
         "main.blocks",
