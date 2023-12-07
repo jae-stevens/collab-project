@@ -91,7 +91,7 @@ if (select == 1) {
         . . . f 1 1 1 1 1 1 1 1 f . . . 
         . . . . f f f f f f f f . . . . 
         `, SpriteKind.target)
-    mySprite.setPosition(130, 15)
+    mySprite.setPosition(140, 69)
 } else if (select == 3) {
     scene.setBackgroundColor(11)
     myDart = darts.create(img`
@@ -132,7 +132,7 @@ if (select == 1) {
         . . . f 1 1 1 1 1 1 1 1 f . . . 
         . . . . f f f f f f f f . . . . 
         `, SpriteKind.target)
-    mySprite.setPosition(130, 15)
+    mySprite.setPosition(70, 10)
 } else {
     game.gameOver(false)
 }
