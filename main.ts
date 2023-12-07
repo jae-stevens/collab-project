@@ -1,7 +1,18 @@
+namespace SpriteKind {
+    export const target = SpriteKind.create()
+}
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    myDart.throwDart()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.target, function (sprite, otherSprite) {
+    game.gameOver(true)
+})
 let mySprite: Sprite = null
+let myDart: Dart = null
 let select = game.askForNumber("Choose a number 1-3", 1)
 if (select == 1) {
-    mySprite = sprites.create(img`
+    scene.setBackgroundColor(4)
+    myDart = darts.create(img`
         . . . . . . . e c 7 . . . . . . 
         . . . . e e e c 7 7 e e . . . . 
         . . c e e e e c 7 e 2 2 e e . . 
@@ -19,8 +30,30 @@ if (select == 1) {
         . . . 2 2 e e 4 4 4 2 e e . . . 
         . . . . . 2 2 e e e e . . . . . 
         `, SpriteKind.Player)
-} else if (select == 2) {
+    myDart.controlWithArrowKeys()
+    myDart.setTrace()
     mySprite = sprites.create(img`
+        . . . . f f f f f f f f . . . . 
+        . . . f 1 1 1 1 1 1 1 1 f . . . 
+        . . f 1 1 1 1 1 1 1 1 1 1 f . . 
+        . f 1 1 1 2 2 2 2 2 2 1 1 1 f . 
+        f 1 1 1 2 1 1 1 1 1 1 2 1 1 1 f 
+        f 1 1 2 1 1 1 1 1 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 2 2 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 2 1 1 2 1 1 2 1 1 f 
+        f 1 1 2 1 1 2 1 1 2 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 2 2 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 1 1 1 1 1 2 1 1 f 
+        f 1 1 1 2 1 1 1 1 1 1 2 1 1 1 f 
+        . f 1 1 1 2 2 2 2 2 2 1 1 1 f . 
+        . . f 1 1 1 1 1 1 1 1 1 1 f . . 
+        . . . f 1 1 1 1 1 1 1 1 f . . . 
+        . . . . f f f f f f f f . . . . 
+        `, SpriteKind.target)
+    mySprite.setPosition(130, 15)
+} else if (select == 2) {
+    scene.setBackgroundColor(7)
+    myDart = darts.create(img`
         4 4 4 . . 4 4 4 4 4 . . . . . . 
         4 5 5 4 4 5 5 5 5 5 4 4 . . . . 
         b 4 5 5 1 5 1 1 1 5 5 5 4 . . . 
@@ -38,8 +71,30 @@ if (select == 1) {
         . . . . c c b 4 4 4 b b 4 5 4 4 
         . . . . . . c c c c c c b b 4 . 
         `, SpriteKind.Player)
-} else if (select == 3) {
+    myDart.controlWithArrowKeys()
+    myDart.setTrace()
     mySprite = sprites.create(img`
+        . . . . f f f f f f f f . . . . 
+        . . . f 1 1 1 1 1 1 1 1 f . . . 
+        . . f 1 1 1 1 1 1 1 1 1 1 f . . 
+        . f 1 1 1 2 2 2 2 2 2 1 1 1 f . 
+        f 1 1 1 2 1 1 1 1 1 1 2 1 1 1 f 
+        f 1 1 2 1 1 1 1 1 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 2 2 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 2 1 1 2 1 1 2 1 1 f 
+        f 1 1 2 1 1 2 1 1 2 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 2 2 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 1 1 1 1 1 2 1 1 f 
+        f 1 1 1 2 1 1 1 1 1 1 2 1 1 1 f 
+        . f 1 1 1 2 2 2 2 2 2 1 1 1 f . 
+        . . f 1 1 1 1 1 1 1 1 1 1 f . . 
+        . . . f 1 1 1 1 1 1 1 1 f . . . 
+        . . . . f f f f f f f f . . . . 
+        `, SpriteKind.target)
+    mySprite.setPosition(130, 15)
+} else if (select == 3) {
+    scene.setBackgroundColor(11)
+    myDart = darts.create(img`
         . . . . . . . 6 . . . . . . . . 
         . . . . . . 8 6 6 . . . 6 8 . . 
         . . . e e e 8 8 6 6 . 6 7 8 . . 
@@ -57,6 +112,27 @@ if (select == 1) {
         e e e 2 e e c e c c c . . . . . 
         . c c c c c c c . . . . . . . . 
         `, SpriteKind.Player)
+    myDart.controlWithArrowKeys()
+    myDart.setTrace()
+    mySprite = sprites.create(img`
+        . . . . f f f f f f f f . . . . 
+        . . . f 1 1 1 1 1 1 1 1 f . . . 
+        . . f 1 1 1 1 1 1 1 1 1 1 f . . 
+        . f 1 1 1 2 2 2 2 2 2 1 1 1 f . 
+        f 1 1 1 2 1 1 1 1 1 1 2 1 1 1 f 
+        f 1 1 2 1 1 1 1 1 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 2 2 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 2 1 1 2 1 1 2 1 1 f 
+        f 1 1 2 1 1 2 1 1 2 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 2 2 1 1 1 2 1 1 f 
+        f 1 1 2 1 1 1 1 1 1 1 1 2 1 1 f 
+        f 1 1 1 2 1 1 1 1 1 1 2 1 1 1 f 
+        . f 1 1 1 2 2 2 2 2 2 1 1 1 f . 
+        . . f 1 1 1 1 1 1 1 1 1 1 f . . 
+        . . . f 1 1 1 1 1 1 1 1 f . . . 
+        . . . . f f f f f f f f . . . . 
+        `, SpriteKind.target)
+    mySprite.setPosition(130, 15)
 } else {
     game.gameOver(false)
 }
